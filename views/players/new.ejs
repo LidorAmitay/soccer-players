@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<% layout('/Layouts/boilerplates.ejs') %>
 <body>
     <h1>Add new Player</h1>
     <form action="/players" method="POST">
@@ -21,8 +14,12 @@
         <input type="text" name="position" id="position">
         <label for="jersey">Jersey Number</label>
         <input type="text" name="jersey" id="jersey">
+        <!-- <label for="image">Image(Optional)</label>
+        <input type="text" name="image" id="image"> -->
         <button>Submit</button>
     </form>
+    <footer>
+        <a href="/players">Back</a>
+    </footer>
     
 </body>
-</html>

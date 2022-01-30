@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const morgan = require('morgan');
 const port = 3000;
+const engine = require('ejs-mate');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const Player = require('./models/player');
@@ -16,11 +18,21 @@ mongoose.connect('mongodb://localhost:27017/soccerApp', { useNewUrlParser: true,
         console.log(err);
     })
 
+app.engine('ejs', engine); // setting ejs-mate as ejs engine
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(morgan('tiny'))
+
+
+app.get('/search', async (req, res) => {
+    const {search} = req.query
+    const regex = new RegExp(search, 'i')
+    const players = await Player.find({name:{$regex: regex}})
+    res.render('players/find', {players});
+})
 
 app.get('/players', async (req, res) => {
     const players = await Player.find({});

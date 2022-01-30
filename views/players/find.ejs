@@ -1,0 +1,11 @@
+<% layout('/Layouts/boilerplates.ejs') %>
+<body>
+    <h1>Players found:</h1>
+    <ul>
+        <% for(let player of players) { %>
+            <li>
+                <a href="/players/<%= player._id %> "><%= player.name %> </a>
+            </li>
+        <% } %>
+    </ul>
+</body>

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { stringify } = require('nodemon/lib/utils');
 
 
 const playerSchema = new mongoose.Schema({
@@ -26,7 +27,7 @@ const playerSchema = new mongoose.Schema({
     jersey: {
         type: Number,
         required: true,
-    }
+    },
 })
 
 const Player = mongoose.model('Player', playerSchema);
