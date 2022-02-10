@@ -1,20 +1,24 @@
 <% layout('/Layouts/boilerplates.ejs') %>
-<body>
-    <h1>Edit <%= player.name %> </h1>
-    <form action="/players/<%= player._id %>?_method=PUT" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name"  value=<%= player.name %> >
-        <label for="team">Team</label>
-        <input type="text" name="team" id="team" value=<%= player.team %> >
-        <label for="age">Age</label>
-        <input type="number" name="age" id="age" value=<%= player.age %> >
-        <label for="role">Role</label>
-        <input type="text" name="role" id="role" value=<%= player.role %> >
-        <label for="position">Position</label>
-        <input type="text" name="position" id="position" value=<%= player.position %> >
-        <label for="jersey">Jersey Number</label>
-        <input type="text" name="jersey" id="jersey" value=<%= player.jersey %> >
-        <button>Submit</button>
-    </form>
-    <a href="/players/<% player._id%>">Cancel</a>
-</body>
+<div class="row">
+    <h1 class="text-center">Edit <%= player.name %></h1>
+    <div class="col-6 offset-3">
+        <form action="/players/<%= player._id %>?_method=PUT" method="POST">
+            <label class='mb-2 form-label'for="name">Name</label>
+            <input class='mb-2 form-control' type="text" name="name" id="name" value=<%= player.name %>>
+            <label class='mb-2 form-label'for="team">Team</label>
+            <input class='mb-2 form-control' type="text" name="team" id="team" value=<%= player.team %>>
+            <label class='mb-2 form-label'for="age">Age</label>
+            <input class='mb-2 form-control' type="number" name="age" id="age" value=<%= player.age %>>
+            <label class='mb-2 form-label'for="role">Role</label>
+            <input class='mb-2 form-control' type="text" name="role" id="role" value=<%= player.role %>>
+            <label class='mb-2 form-label'for="position">Position</label>
+            <input class='mb-2 form-control' type="text" name="position" id="position" value=<%= player.position %>>
+            <label class='mb-2 form-label'for="jersey">Jersey Number</label>
+            <input class='mb-2 form-control' type="text" name="jersey" id="jersey" value=<%= player.jersey %>>
+            <!-- <label class='mb-2 form-label' for="image">Image(Optional)</label>
+            <input class='mb-2 form-control' type="text" name="image" id="image"> -->
+            <button class="mb-3 btn btn-info inline">Update Player</button>
+            <a class='mb-3 btn btn-danger' href="/players/<%= player._id%>">Cancel</a>
+        </form>
+    </div>
+</div>

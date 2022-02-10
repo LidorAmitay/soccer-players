@@ -1,25 +1,24 @@
 <% layout('/Layouts/boilerplates.ejs') %>
-<body>
-    <h1>Add new Player</h1>
-    <form action="/players" method="POST">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name">
-        <label for="team">Team</label>
-        <input type="text" name="team" id="team">
-        <label for="age">Age</label>
-        <input type="number" name="age" id="age">
-        <label for="role">Role</label>
-        <input type="text" name="role" id="role">
-        <label for="position">Position</label>
-        <input type="text" name="position" id="position">
-        <label for="jersey">Jersey Number</label>
-        <input type="text" name="jersey" id="jersey">
-        <!-- <label for="image">Image(Optional)</label>
-        <input type="text" name="image" id="image"> -->
-        <button>Submit</button>
-    </form>
-    <footer>
-        <a href="/players">Back</a>
-    </footer>
-    
-</body>
+<div class="row">
+    <h1 class="text-center">Add new Player</h1>
+    <div class="col-6 offset-3">
+        <form action="/players" method="POST">
+            <label class='mb-2 form-label'for="name">Name</label>
+            <input class='mb-2 form-control' type="text" name="name" id="name">
+            <label class='mb-2 form-label'for="team">Team</label>
+            <input class='mb-2 form-control' type="text" name="team" id="team">
+            <label class='mb-2 form-label'for="age">Age</label>
+            <input class='mb-2 form-control' type="number" name="age" id="age">
+            <label class='mb-2 form-label'for="role">Role</label>
+            <input class='mb-2 form-control' type="text" name="role" id="role">
+            <label class='mb-2 form-label'for="position">Position</label>
+            <input class='mb-2 form-control' type="text" name="position" id="position">
+            <label class='mb-2 form-label'for="jersey">Jersey Number</label>
+            <input class='mb-2 form-control' type="text" name="jersey" id="jersey">
+            <!-- <label class='mb-2 form-label' for="image">Image(Optional)</label>
+            <input class='mb-2 form-control' type="text" name="image" id="image"> -->
+            <button class="mb-3 btn btn-success inline">Add Player</button>
+            <a class='mb-3 btn btn-danger' href="/players">Cancel</a>
+        </form>
+    </div>
+</div>

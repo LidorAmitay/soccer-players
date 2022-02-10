@@ -1,16 +1,25 @@
 <% layout('/Layouts/boilerplates.ejs') %>
-<body>
-    <h1><%= player.name %> </h1>
-    <ul>
-        <li>Team : <%= player.team %> </li>
-        <li>Age : <%= player.age %> </li>
-        <li>Role : <%= player.role %> </li>
-        <li>Position : <%= player.position %> </li>
-        <li>Jersey Number : <%= player.jersey %> </li>
-    </ul>
-    <a href="/players">All Players</a>
-    <a href="/players/<%= player._id %>/edit ">Edit</a>
-    <form action="/players/<%= player._id %>?_method=DELETE" method="POST">
-        <button>Delete</button>
-    </form>
-</body>
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <h5 class="card-header"><%= player.name %></h5>
+            <div class="card-body">
+              <h5 class="card-title"> <%= player.team %> </h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Age : <%= player.age %></li>
+              <li class="list-group-item">Position : <%= player.position %></li>
+              <li class="list-group-item">Jersey Number : <%= player.jersey %></li>
+            </ul>
+            <div class="card-body">
+                <div class="d-inline"> 
+                    <a href="/players/<%= player._id %>/edit " class="btn btn-primary">Edit</a>
+                </div>
+                
+                <form class = "d-inline" action="/players/<%= player._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form> 
+            </div>
+        </div>
+    </div>
+</div>
