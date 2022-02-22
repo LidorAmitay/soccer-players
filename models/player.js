@@ -5,7 +5,6 @@ const { stringify } = require('nodemon/lib/utils');
 const playerSchema = new mongoose.Schema({
     name : {
         type: String,
-        required:true,
     },
     team : {
         type : String,
@@ -13,7 +12,6 @@ const playerSchema = new mongoose.Schema({
     },
     age: {
         type: Number,
-        required : true,
     },
     role:{
         type:String,
@@ -22,11 +20,9 @@ const playerSchema = new mongoose.Schema({
     },
     position: {
         type: String,
-        required:true,
     },
     jersey: {
         type: Number,
-        required: true,
     },
 })
 

@@ -2,19 +2,19 @@
 <div class="row">
     <h1 class="text-center">Add new Player</h1>
     <div class="col-6 offset-3">
-        <form action="/players" method="POST">
+        <form action="/players" method="POST" novalidate class="validated-form">
             <label class='mb-2 form-label'for="name">Name</label>
-            <input class='mb-2 form-control' type="text" name="name" id="name">
+            <input class='mb-2 form-control' type="text" name="player[name]" id="name" required>
             <label class='mb-2 form-label'for="team">Team</label>
-            <input class='mb-2 form-control' type="text" name="team" id="team">
+            <input class='mb-2 form-control' type="text" name="player[team]" id="team" required>
             <label class='mb-2 form-label'for="age">Age</label>
-            <input class='mb-2 form-control' type="number" name="age" id="age">
+            <input class='mb-2 form-control' type="number" name="player[age]" id="age" required>
             <label class='mb-2 form-label'for="role">Role</label>
-            <input class='mb-2 form-control' type="text" name="role" id="role">
+            <input class='mb-2 form-control' type="text" name="player[role]" id="role" required>
             <label class='mb-2 form-label'for="position">Position</label>
-            <input class='mb-2 form-control' type="text" name="position" id="position">
+            <input class='mb-2 form-control' type="text" name="player[position]" id="position" required>
             <label class='mb-2 form-label'for="jersey">Jersey Number</label>
-            <input class='mb-2 form-control' type="text" name="jersey" id="jersey">
+            <input class='mb-2 form-control' type="text" name="player[jersey]" id="jersey" required>
             <!-- <label class='mb-2 form-label' for="image">Image(Optional)</label>
             <input class='mb-2 form-control' type="text" name="image" id="image"> -->
             <button class="mb-3 btn btn-success inline">Add Player</button>
